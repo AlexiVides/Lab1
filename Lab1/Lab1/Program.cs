@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,23 +16,24 @@ namespace Lab1
             int edad;
             string municipio;
             string departamento;
-
-            int i;
-
-            String[ ] Datos = new String[100];
-
+            int longitud = 100, indice = 0, opc;
             
 
+            string[] RegPersona = new string[longitud];
+
             Console.WriteLine("Bienvenido al sistema");
+
+            
 
             int x = 0;
             while (x == 0)
             {
+                Console.WriteLine("");
                 Console.WriteLine("---------------Menu---------------");
                 Console.WriteLine("1- Ingresar usuario");
                 Console.WriteLine("2- Mostrar usuario registrados");
                 Console.WriteLine("3- Salir");
-                int opc = Convert.ToInt32(Console.ReadLine());
+                opc = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("");
 
                 if (opc == 1)
@@ -45,22 +48,13 @@ namespace Lab1
                     Console.WriteLine("3- Cabañas");
                     Console.WriteLine("4- Cusclatlan");
                     Console.WriteLine("5- La Libertad");
-                    Console.WriteLine("6- La Paz");
-                    Console.WriteLine("7- La Union");
-                    Console.WriteLine("8- Morazan");
-                    Console.WriteLine("9- San Miguel");
-                    Console.WriteLine("10- San Salvador");
-                    Console.WriteLine("11- San Vicente");
-                    Console.WriteLine("12- Santa Ana");
-                    Console.WriteLine("13- Sonsonate");
-                    Console.WriteLine("14- Usulutan");
-                    Console.WriteLine("");
-
-
+                    Console.WriteLine("6- San Miguel");
                     departamento = Console.ReadLine();
+                    Console.WriteLine("");
 
                     if (departamento == "Ahuachapan")
                     {
+                        
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Ahuachapan");
                         Console.WriteLine("- Apaneca");
@@ -73,22 +67,23 @@ namespace Lab1
                         municipio = Console.ReadLine();
                         Console.WriteLine("");
 
-                        Console.WriteLine("");
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
-
-                        Datos[0] = nombre;
-                        Datos[1] = Convert.ToString(edad);
-                        Datos[2] = departamento;
-                        Datos[3] = municipio;
-
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
 
                     }
                     else if (departamento == "Chalatenango")
                     {
+                        
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Agua Caliente");
                         Console.WriteLine("- Ojos de Agua");
@@ -99,16 +94,25 @@ namespace Lab1
                         Console.WriteLine("- La Laguna");
                         Console.WriteLine("- El Carrizal");
                         municipio = Console.ReadLine();
-
                         Console.WriteLine("");
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
+
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
+
                     }
                     else if (departamento == "Cabañas")
                     {
+                        
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Cinquera");
                         Console.WriteLine("- Dolores");
@@ -119,15 +123,25 @@ namespace Lab1
                         Console.WriteLine("- Tejutepeque");
                         Console.WriteLine("- Victoria");
                         municipio = Console.ReadLine();
+                        Console.WriteLine("");
 
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
+
                     }
                     else if (departamento == "Cusclatlan")
                     {
+                        
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Candelaria");
                         Console.WriteLine("- Cojutepeque");
@@ -138,15 +152,25 @@ namespace Lab1
                         Console.WriteLine("- Suchitoto");
                         Console.WriteLine("- Tenancinago");
                         municipio = Console.ReadLine();
+                        Console.WriteLine("");
 
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
+
                     }
                     else if (departamento == "La Libertad")
                     {
+                        
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Antiguo Cuscatlan");
                         Console.WriteLine("- Cuidad Arce");
@@ -157,15 +181,25 @@ namespace Lab1
                         Console.WriteLine("- Jicalapa");
                         Console.WriteLine("- La Libertad");
                         municipio = Console.ReadLine();
+                        Console.WriteLine("");
 
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
+
                     }
                     else if (departamento == "San Miguel")
                     {
+                       
                         Console.WriteLine("Digite el nombre del municipio");
                         Console.WriteLine("- Carolina");
                         Console.WriteLine("- Chinameca");
@@ -176,12 +210,21 @@ namespace Lab1
                         Console.WriteLine("- Quelepa");
                         Console.WriteLine("- San Jorge");
                         municipio = Console.ReadLine();
+                        Console.WriteLine("");
 
-                        Console.WriteLine("-----------Datos----------");
-                        Console.WriteLine("Nombres: " + nombre);
-                        Console.WriteLine("Edad: " + edad);
-                        Console.WriteLine("Departamento: " + departamento);
-                        Console.WriteLine("Municipio: " + municipio);
+                        if (indice < RegPersona.Length)
+                        {
+                            RegPersona[indice] = nombre;
+                            RegPersona[indice + 1] = Convert.ToString(edad);
+                            RegPersona[indice + 2] = departamento;
+                            RegPersona[indice + 3] = municipio;
+                            indice += 4;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Almacemiento lleno!!");
+                        }
+
 
                     }
                     else
@@ -194,12 +237,14 @@ namespace Lab1
                 else if (opc == 2)
                 {
                     Console.WriteLine("Datos");
-                    for(i = 0; i < Datos.Length; i++);
+
+                    for (int i = 0; i < indice; i += 4)
                     {
-                        Console.WriteLine("" + i);
+                        Console.WriteLine(RegPersona[i + 1] + " " + RegPersona[i + 2] + " " + RegPersona[i + 3]);
                     }
+
                 }
-                else if (opc == 2)
+                else if (opc == 3)
                 {
                     Environment.Exit(0);
                 }
